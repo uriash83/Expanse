@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Expanse.Models.Models.CryptoCurrency>
+@{
+    ViewData["Title"] = "Index";// bo tytul jest w _Layout
+
+}
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Crypto List</h1>
+
+        <!-- Przyciski nad tabelą -->
+        <div class="mb-3 text-end">
+        <a class="btn btn-primary" asp-action="Create">Add New Crypto</a> <!-- Zmień 'YourController/Add' na właściwy link do akcji dodawania nowego zasobu -->
+        </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-hover table-bordered align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Ticker</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Detail</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var asset in Model)
+                {
+                    <tr>
+                        <td>@asset.Id</td>
+                        <td>@asset.Name</td>
+                        <td>@asset.Ticker</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@asset.Id" class="btn btn-warning btn-sm">Edit</a>
+                        </td>
+                        <td>
+                            <a href="YourController/Detail/@asset.Id" class="btn btn-info btn-sm">Detail</a>
+                        </td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@asset.Id" method="post" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    </div>
+
