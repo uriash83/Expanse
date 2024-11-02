@@ -19,7 +19,8 @@ namespace Expanse.DataAccess.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Ticker = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsFiduciary = table.Column<bool>(type: "bit", nullable: false),
-                    Info = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Info = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CurrencyCode = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

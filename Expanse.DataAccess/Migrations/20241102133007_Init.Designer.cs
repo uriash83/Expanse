@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Expanse.DataAccess.Migrations
 {
     [DbContext(typeof(ExpanseDbContext))]
-    [Migration("20241030204100_Init")]
+    [Migration("20241102133007_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -31,6 +31,10 @@ namespace Expanse.DataAccess.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CurrencyCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Info")
                         .HasColumnType("nvarchar(max)");

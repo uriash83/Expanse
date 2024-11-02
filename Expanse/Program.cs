@@ -19,6 +19,7 @@ builder.Services.AddDbContext<ExpanseDbContext>(
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+var aaaa = app.Environment;
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -45,3 +46,24 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+
+/*
+ DEV:
+
+zmiana 
+
+Add-Migration SeccProd -OutputDir "Migrations/Dev"
+update-database
+
+
+PROD
+
+Add-Migration SeccProd -OutputDir "Migrations/Prod"
+Script-Migration
+run script on production database
+
+ 
+ 
+ 
+ */

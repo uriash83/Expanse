@@ -15,6 +15,7 @@ namespace Expanse.Models.Models
         public bool IsFiduciary { get; set; }
         public string? Info { get; set; }
 
+
         //public virtual List<CryptoWalletCurrency> CurrenciesWallet { get; set; } = new List<CryptoWalletCurrency>();// mniej zajmuje miejsca
 
         //public virtual List<CryptoTransaction> CryptoTransactionsBuy { get; set; } = new List<CryptoTransaction>();
