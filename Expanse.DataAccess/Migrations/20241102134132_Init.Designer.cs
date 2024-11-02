@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Expanse.DataAccess.Migrations
 {
     [DbContext(typeof(ExpanseDbContext))]
-    [Migration("20241030204100_Init")]
+    [Migration("20241102134132_Init")]
     partial class Init
     {
         /// <inheritdoc />
